@@ -8,8 +8,7 @@
   "bugs": "https://github.com/fabrice8/marko-perfect-scrollbar/issues/new",
   "files": [
     "index.marko",
-    "marko.json",
-    "style.css"
+    "marko.json"
   ],
   "homepage": "https://github.com/fabrice8/marko-perfect-scrollbar/tree/master",
   "keywords": [
