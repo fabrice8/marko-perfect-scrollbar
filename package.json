@@ -1,0 +1,26 @@
+{
+  "name": "marko-perfect-scrollbar",
+  "version": "0.0.2",
+  "description": "Auto-Scroll for MarkoJS component",
+  "repository": "https://github.com/fabrice8/marko-perfect-scrollbar",
+  "author": "Fabrice K.M. Ekpetse <fabrice.xyclone@gmail.com>",
+  "license": "MIT",
+  "bugs": "https://github.com/fabrice8/marko-perfect-scrollbar/issues/new",
+  "files": [
+    "index.marko",
+    "marko.json",
+    "style.css"
+  ],
+  "homepage": "https://github.com/fabrice8/marko-perfect-scrollbar/tree/master",
+  "keywords": [
+    "marko",
+    "perfect-scrollbar",
+    "scrollbar"
+  ],
+  "peerDependencies": {
+    "marko": "^4.12.4 || ^5"
+  },
+  "dependencies": {
+    "perfect-scrollbar": "^1.5.3"
+  }
+}

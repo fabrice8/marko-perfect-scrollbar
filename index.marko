@@ -1,0 +1,63 @@
+
+import PerfectScrollbar from 'perfect-scrollbar'
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
+
+static const PSEvents = [
+  ['ps-scroll-x', 'scroll-x'],
+  ['ps-scroll-left', 'scroll-left'],
+  ['ps-scroll-right', 'scroll-right'],
+  ['ps-x-reach-start', 'reach-x-start'],
+  ['ps-x-reach-end', 'reach-x-end'],
+
+  ['ps-scroll-y', 'scroll-y'],
+  ['ps-scroll-up', 'scroll-up'],
+  ['ps-scroll-down', 'scroll-down'],
+  ['ps-y-reach-start', 'reach-y-start'],
+  ['ps-y-reach-end', 'reach-y-end']
+]
+
+class {
+  onCreate(){ this.state = { attrs: {} } }
+  onInput( input ){
+    const attrs = Object.assign( {}, input )
+
+    delete attrs.class
+    delete attrs.style
+    delete attrs.height
+    delete attrs.scrollbarLength
+    delete attrs.bottomPadding
+    delete attrs.renderBody
+
+    this.state.attrs = attrs
+  }
+  onMount(){ this.initScroll() }
+  onUpdate(){
+    this.addEventListener()
+    this.initScroll() 
+  }
+  initScroll(){
+    const 
+    elem = this.getEl(),
+    ps = new PerfectScrollbar( elem, { 
+      maxScrollbarLength: ( this.input.scrollbarLength || 20 ),
+      suppressScrollX: this.input.noScrollX
+    } )
+
+    this.addEventListener( ps )
+  }
+
+  addEventListener( ps ){
+    const elem = this.getEl()
+    PSEvents.map( ([ ps_event, as_event ]) => elem.addEventListener( ps_event, () => this.emit( as_event, ps ) ) )
+  }
+  removeEventListener(){
+    const elem = this.getEl()
+    PSEvents.map( ([ ps_event ]) => elem.removeEventListener( ps_event ) )
+  }
+}
+
+<${input.tag || 'div'} class=input.class
+      style=`height:${input.height || '100%'};${input.style}`
+      ...state.attrs>
+  <${input.renderBody} />
+</${input.tag || 'div'}>
