@@ -33,7 +33,7 @@ Common properties you may want to specify include:
 - `scrollbarLength` - apply width or height to the scrollbar
 - `noScollX` - disable horizontal scroll
 
-For other properties, kinldy refer to [Perfect-Scrollbar Documentation](https://www.npmjs.com/package/perfect-scrollbar)
+For other properties, kindly refer to [Perfect-Scrollbar Documentation](https://www.npmjs.com/package/perfect-scrollbar)
 
 ## Events
 
